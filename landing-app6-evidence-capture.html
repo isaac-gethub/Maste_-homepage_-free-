@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SAP Controls Consultant — Hands-On Course | TIB Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3864; --navy-dark:#152847; --teal:#1F7A8C; --amber:#C65911; --amber-dark:#A84B0D;
+    --gold:#B08D57; --bg:#F5F6F8; --panel:#FFFFFF; --text:#20262E; --muted:#6B7280; --line:#E2E5EA;
+    --accent:#8a4a2e;
+    --serif:"Playfair Display", Georgia, serif; --sans:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:var(--sans); color:var(--text); background:var(--bg); line-height:1.55;}
+  a{color:inherit;}
+  .topbar{background:var(--navy-dark); color:#fff; padding:10px 28px; font-size:13px; display:flex; justify-content:space-between; align-items:center;}
+  .topbar a{color:#B7C6DE; text-decoration:none;}
+  .topbar a:hover{color:#fff;}
+
+  .hero{background:linear-gradient(155deg, var(--accent) 0%, var(--navy-dark) 75%); color:#fff; padding:56px 28px 64px;}
+  .hero-inner{max-width:980px; margin:0 auto;}
+  .doccode-pill{display:inline-block; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; background:rgba(255,255,255,0.15); padding:5px 12px; border-radius:100px; margin-bottom:18px;}
+  .hero h1{font-family:var(--serif); font-size:clamp(28px,4vw,42px); margin:0 0 16px; line-height:1.15; max-width:700px;}
+  .hero p.lede{font-size:16.5px; color:#F0DACB; max-width:620px; margin:0 0 30px;}
+  .hero-ctas{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; padding:12px 22px; border-radius:7px; text-decoration:none; cursor:pointer; border:none;}
+  .btn-primary{background:var(--amber); color:#fff;}
+  .btn-primary:hover{background:var(--amber-dark);}
+  .btn-outline{background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4);}
+  .btn-outline:hover{border-color:#fff;}
+  .stat-strip{display:flex; gap:40px; flex-wrap:wrap; margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.2);}
+  .stat-strip .s b{display:block; font-family:var(--serif); font-size:28px;}
+  .stat-strip .s span{font-size:11.5px; color:#F5E4D4; text-transform:uppercase; letter-spacing:.5px;}
+
+  .section{max-width:980px; margin:0 auto; padding:56px 28px;}
+  .section-head{max-width:660px; margin-bottom:32px;}
+  .kicker{font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:var(--teal); margin-bottom:10px;}
+  .section-head h2{font-family:var(--serif); font-size:clamp(24px,3vw,30px); margin:0 0 10px; color:var(--navy-dark);}
+  .section-head p{color:var(--muted); font-size:15px; margin:0;}
+
+  .format-row{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  @media (max-width:760px){.format-row{grid-template-columns:1fr;}}
+  .fcard{background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px;}
+  .fcard .ico{font-size:22px; margin-bottom:10px;}
+  .fcard h4{margin:0 0 6px; font-size:15px; color:var(--navy-dark);}
+  .fcard p{margin:0; font-size:13.5px; color:var(--muted);}
+
+  .track-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:700px){.track-grid{grid-template-columns:1fr;}}
+  .track{background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px;}
+  .track h4{margin:0 0 8px; font-size:15.5px; color:var(--navy-dark);}
+  .track p{margin:0; font-size:13.5px; color:var(--text);}
+  .track .tag{display:inline-block; font-size:11px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;}
+
+  .cta-band{background:var(--navy-dark); color:#fff; padding:52px 28px; text-align:center;}
+  .cta-band h3{font-family:var(--serif); font-size:26px; margin:0 0 12px;}
+  .cta-band p{color:#B7C6DE; max-width:540px; margin:0 auto 26px; font-size:15px;}
+
+  .note{background:#FBF6ED; border:1px solid #E9DCC0; border-radius:10px; padding:16px 18px; font-size:13.5px; color:#6B5730; margin-top:26px;}
+
+  footer{background:var(--navy-dark); color:#8298B8; padding:26px 28px; text-align:center; font-size:12px; border-top:1px solid rgba(255,255,255,0.1);}
+  footer a{color:#B7C6DE; text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="./index.html">← All Training Apps</a>
+  <span>TIB Systems LLC</span>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="doccode-pill">App 6 · Evidence Capture Training</span>
+    <h1>SAP Controls Consultant — Hands-On Course</h1>
+    <p class="lede">Everything the No-Access Track (App 5) teaches you to evidence from a static pack, you now go produce yourself — independently executing steps in a live SAP sandbox to generate real evidence for all 64 findings. Paired 1:1 with App 5, plus dedicated SOX/audit-methodology, ITAC, and Big-4 career-prep modules.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://no-access-sap-screen-capture.vercel.app" target="_blank" rel="noopener">Sign In &amp; Launch →</a>
+      <a class="btn btn-outline" href="#contents">See Full Contents</a>
+    </div>
+    <div class="stat-strip">
+      <div class="s"><b>19</b><span>Modules</span></div>
+      <div class="s"><b>93</b><span>Sessions</span></div>
+      <div class="s"><b>64</b><span>Findings, Produced Live</span></div>
+      <div class="s"><b>1:1</b><span>Paired with App 5</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <div class="kicker">Format</div>
+    <h2>You don't just review the evidence — you produce it</h2>
+    <p>Every finding you learned to evaluate in the No-Access Track, you now go generate yourself in a live SAP sandbox — the step that closes the gap between judgment and execution.</p>
+  </div>
+  <div class="format-row">
+    <div class="fcard">
+      <div class="ico">🖥️</div>
+      <h4>Live SAP sandbox</h4>
+      <p>Independently execute each step in a real, pre-configured SAP system — not a simulation or recorded demo.</p>
+    </div>
+    <div class="fcard">
+      <div class="ico">🧾</div>
+      <h4>Real evidence, every finding</h4>
+      <p>Produce the actual exports and screenshots for all 64 findings — the same evidence pack App 5 hands you as a starting point.</p>
+    </div>
+    <div class="fcard">
+      <div class="ico">🎯</div>
+      <h4>1:1 paired with App 5</h4>
+      <p>Every module maps directly to a No-Access Track domain, so you can move between judging the evidence and producing it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contents">
+  <div class="section-head">
+    <div class="kicker">Full Course Contents</div>
+    <h2>19 modules, 93 sessions</h2>
+    <p>Built in three layers: the 64-finding evidence-production core, plus dedicated methodology and career tracks not found in any other app in this collection.</p>
+  </div>
+  <div class="track-grid">
+    <div class="track">
+      <div class="tag">Core</div>
+      <h4>Evidence Production — 64 Findings</h4>
+      <p>Hands-on sessions covering the same 15 control domains as the No-Access Track (App 5) — access, roles, SoD, Fiori/UI5, sensitive access, workflow, certification, risk analysis, change control, logging, transport, batch jobs, interfaces, security parameters, and audit logs — this time executed live.</p>
+    </div>
+    <div class="track">
+      <div class="tag">Methodology</div>
+      <h4>SOX / Audit-Methodology &amp; ITAC</h4>
+      <p>Dedicated modules on SOX 404 methodology and IT Application Controls (ITAC) — the audit framework that gives the 64 findings their real-world context.</p>
+    </div>
+    <div class="track">
+      <div class="tag">Career</div>
+      <h4>Big-4 Career Prep</h4>
+      <p>Modules built specifically around what Big-4 and consulting-firm interviews and first-year engagements actually expect from a new controls consultant.</p>
+    </div>
+    <div class="track">
+      <div class="tag">Companion</div>
+      <h4>Works Alongside Apps 4 &amp; 5</h4>
+      <p>Use App 4 to watch a finding narrated, App 5 to draft the conclusion from the evidence pack, then App 6 to go produce that same evidence yourself, live.</p>
+    </div>
+  </div>
+  <div class="note">
+    <strong>Note for TIB staff:</strong> the session-by-session breakdown across the 19 modules wasn't available while building this page — this section uses the four-track structure from the course description. Send the module list and it can be expanded to a full 19-module table matching the depth of Apps 1–5.
+  </div>
+</section>
+
+<section class="cta-band">
+  <h3>Stop reviewing evidence. Start producing it.</h3>
+  <p>Sign in with your enrolled trainee account to launch the sandbox course, or contact TIB Systems about enrollment.</p>
+  <a class="btn btn-primary" href="https://no-access-sap-screen-capture.vercel.app" target="_blank" rel="noopener">Sign In &amp; Launch →</a>
+</section>
+
+<footer>
+  TIB Systems LLC · SAP Security · GRC · Controls Training &amp; Advisory · <a href="./index.html">All Training Apps</a>
+</footer>
+
+</body>
+</html>
